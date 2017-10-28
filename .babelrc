@@ -1,0 +1,8 @@
+{
+  "presets": ["latest", "es2016-node5", "react", "stage-3"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-class-properties",
+    "babel-plugin-transform-runtime"
+  ]
+}

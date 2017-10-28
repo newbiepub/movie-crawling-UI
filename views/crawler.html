@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crawler</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--Animate-->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+          integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/normalize.css"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+            type="text/javascript"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script defer>
+        function openMovieLink(instance) {
+            try {
+                window.open(instance.getAttribute("data-movie-url"));
+            } catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title animated fadeInDown">
+                <h1>Movie Crawler</h1>
+            </div>
+        </header> <!-- Header -->
+        <section class="center animated fadeInUp">
+            <div class="form-wrapper">
+                <form id="movieForm" class="input-wrapper">
+                    <label for="movieLink" class="input-label h1">Insert Your Movie Link</label>
+                    <input type="text" class="input h2"
+                           name="url" id="movieLink" value=""
+                           required placeholder="http://www.phimmoi.net/phim/thi-tran-twin-peaks-2017-phan-1-5333/">
+                    <div class="centralize">
+                        <input type="submit" class="submit-button h4" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div><!-- /container -->
+    <script>
+        $("#movieForm").submit(function (e) {
+            e.preventDefault();
+            var url = $("#movieLink").val();
+            if(url.indexOf("phimmoi.net") !== -1) {
+                window.location = window.location.origin + ("/phimmoi?url="+url);
+            } else {
+                window.location = window.location.origin + ("/bilutv?url="+url);
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "name": "moviecrawler",
+  "version": "1.0.0",
+  "description": "Movie Crawler",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon lib/index.js nodemon --exec babel-node --presets es2016-node5,stage-3",
+    "build": "babel lib -s -D -d dist",
+    "production": "node dist/index.js",
+    "test": "ava"
+  },
+  "author": "Nhom 4",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "compression": "^1.7.1",
+    "consolidate": "^0.14.5",
+    "cookie-parser": "^1.4.3",
+    "crypto-js": "^3.1.9-1",
+    "csurf": "^1.9.0",
+    "js-beautify": "git+https://github.com/newbiepub/node-js-beautify-unpack.git",
+    "express": "^4.16.2",
+    "express-minify": "^1.0.0",
+    "express-session": "^1.15.6",
+    "helmet": "^3.9.0",
+    "lodash": "^4.17.4",
+    "mustache": "^2.3.0",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-minify": "^0.2.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2016-node5": "^1.1.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-minify": "^0.2.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.12.1"
+  }
+}
