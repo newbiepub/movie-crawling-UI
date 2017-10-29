@@ -7,7 +7,8 @@
     "start": "nodemon lib/index.js nodemon --exec babel-node --presets es2016-node5,stage-3",
     "build": "babel lib -s -D -d dist",
     "production": "node dist/index.js",
-    "test": "ava"
+    "test": "ava --verbose",
+    "test-tap": "ava --tap"
   },
   "author": "Nhom 4",
   "license": "ISC",
@@ -19,11 +20,11 @@
     "cookie-parser": "^1.4.3",
     "crypto-js": "^3.1.9-1",
     "csurf": "^1.9.0",
-    "js-beautify": "git+https://github.com/newbiepub/node-js-beautify-unpack.git",
     "express": "^4.16.2",
     "express-minify": "^1.0.0",
     "express-session": "^1.15.6",
     "helmet": "^3.9.0",
+    "js-beautify": "git+https://github.com/newbiepub/node-js-beautify-unpack.git",
     "lodash": "^4.17.4",
     "mustache": "^2.3.0",
     "path": "^0.12.7",
@@ -31,6 +32,7 @@
     "request": "^2.83.0"
   },
   "devDependencies": {
+    "ava": "^0.23.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-minify": "^0.2.0",
