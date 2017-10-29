@@ -121,13 +121,7 @@
             </div>
             <div id="linkAppend" class="modal-body">
                 <!-- content goes here -->
-                <div class="e-loadholder">
-                    <div class="m-loader">
-                        <span class="e-text">Loading</span>
-                    </div>
-                </div>
-                <div id="particleCanvas-Blue"></div>
-                <div id="particleCanvas-White"></div>
+
             </div>
         </div>
     </div>
@@ -135,6 +129,17 @@
 <script>
     function getLink(instance) {
         try {
+            $("#linkAppend").html(
+                `
+                <div class="e-loadholder">
+                    <div class="m-loader">
+                        <span class="e-text">Loading</span>
+                    </div>
+                </div>
+                <div id="particleCanvas-Blue"></div>
+                <div id="particleCanvas-White"></div>
+                `
+            );
             $("#movieModal").modal("show");
             var mediaUrl = instance.getAttribute("data-movie-url");
             $.ajax({
