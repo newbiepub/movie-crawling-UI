@@ -63,8 +63,12 @@
             var url = $("#movieLink").val();
             if(url.indexOf("phimmoi.net") !== -1) {
                 window.location = window.location.origin + ("/phimmoi?url="+url);
-            } else {
+            } else if (url.indexOf("bilutv.com") !== -1) {
                 window.location = window.location.origin + ("/bilutv?url="+url);
+            } else if(url.indexOf("phimbathu.com") !== -1) {
+                window.location = window.location.origin + ("/phimbathu?url="+url);
+            } else {
+                window.location = window.location.origin + ("/phimvuihd?url="+url);
             }
         })
     </script>
